@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Research: Black Holes - Event Horizon</title>
+</head>
+<body class="dark">
+    <nav style="padding: 20px; display: flex; justify-content: space-between;">
+       <nav style="padding: 20px 0; margin-bottom: 2rem;">
+            <a href="/dashboard" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Dashboard
+            </a>
+        </nav>
+        <span style="opacity: 0.5;">Subject ID: 101-BH-SINGULARITY</span>
+    </nav>
+
+    <main class="container" style="text-align: left; max-width: 800px; padding: 2rem 1rem;">
+        <h1>Black Holes: Beyond the Event Horizon</h1>
+        <p style="font-style: italic; color: var(--btn-bg);">Classification: TOP SECRET / LEVEL 4 ACCESS</p>
+        
+        <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1000" 
+             alt="Black Hole Simulation" style="width:100%; border-radius:15px; margin: 2rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+
+        <section>
+            <h2>What is a Black Hole?</h2>
+            <p>A black hole is a region of spacetime where gravity is so strong that nothing—no particles or even electromagnetic radiation such as light—can escape from it. The theory of general relativity predicts that a sufficiently compact mass can deform spacetime to form a black hole.</p>
+            
+            <div class="gift-list" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; padding: 0; margin-top: 2rem;">
+                <div class="gift-card" style="text-align: left;">
+                    <h3 style="color: var(--btn-bg);">🕳️ Singularity</h3>
+                    <p>At the center lies a point of infinite density where the laws of physics break down entirely.</p>
+                </div>
+                <div class="gift-card" style="text-align: left;">
+                    <h3 style="color: var(--btn-bg);">⚡ Event Horizon</h3>
+                    <p>The "Point of No Return". Once crossed, the escape velocity required exceeds the speed of light.</p>
+                </div>
+                <div class="gift-card" style="text-align: left;">
+                    <h3 style="color: var(--btn-bg);">⚛️ Hawking Radiation</h3>
+                    <p>The theory that black holes aren't completely black, but emit small amounts of thermal radiation.</p>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section style="margin-top: 3rem;">
+            <h2>Evidence & Observation</h2>
+            <p>For decades, black holes were only theoretical. This changed in **April 2019**, when the Event Horizon Telescope (EHT) released the first direct image of a black hole's messier-87 (M87*) accretion disk.</p>
+            
+            <div style="background: var(--card-bg); padding: 2rem; border-radius: 15px; margin-top: 2rem; border: 1px solid var(--btn-bg);">
+                <h3>Research Reference</h3>
+                <p>The gravitational pull is so strong it causes <strong>Gravitational Lensing</strong>—bending the light from stars behind it, creating a visual halo.</p>
+                <br>
+                <a href="https://eventhorizontelescope.org/" target="_blank" class="btn-big">View EHT Real Imagery</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function setTheme(mode) {
+            const body = document.body;
+            if (mode === 'dark') body.classList.add('dark');
+            else body.classList.remove('dark');
+            localStorage.setItem('theme', mode);
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            setTheme(localStorage.getItem('theme') || 'dark');
+        });
+    </script>
+</body>
+</html>

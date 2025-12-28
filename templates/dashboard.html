@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Event Horizon - Dashboard</title>
+</head>
+<body class="dark"> 
+
+    <div class="theme-toggle">
+        <button class="btn-light" onclick="setTheme('light')">☀️</button>
+        <button class="btn-dark" onclick="setTheme('dark')">🌙</button>
+    </div>
+
+    <header class="hero">
+        <div class="overlay">
+            <div class="invite">
+                <h1 style="font-size: 3.5rem; letter-spacing: 5px;">RESEARCH PORTAL</h1>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Welcome back, Agent <strong>{{ user.firstname }}</strong></p>
+                <p>Status: <span style="color: var(--accent); font-weight: bold;">Authorized</span></p>
+                
+                <div class="action-container" style="display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap;">
+                    <a href="#journals" class="btn-main">
+                        <span>EXPLORE ARCHIVES</span>
+                        <small>Access classified data</small>
+                    </a>
+                    <a href="/logout" class="btn-secondary">
+                        <span>TERMINATE SESSION</span>
+                        <small>Secure logout</small>
+                    </a>
+                </div>
+
+                <div style="margin-top: 60px; animation: bounce 2s infinite;">
+                    <a href="#journals" style="color: white; text-decoration: none; font-size: 1.5rem; opacity: 0.7;">
+                        SCROLL TO VIEW JOURNALS<br>
+                        <span style="font-size: 2rem;">↓</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="journals" class="container" style="padding: 6rem 1rem;">
+        <h2 class="category">Available Research Journals</h2>
+        
+        <div class="gift-list">
+            <article class="gift-card">
+                <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=500" alt="Big Bang">
+                <h3>The Big Bang</h3>
+                <p>The cosmic origins and the expansion of space-time.</p>
+                <a href="/journal/big-bang">Read Report</a>
+            </article>
+
+            <article class="gift-card">
+                <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=500" alt="Black Hole">
+                <h3>Black Holes</h3>
+                <p>Singularities and the mystery of the Event Horizon.</p>
+                <a href="/journal/black-holes">Access Data</a>
+            </article>
+
+            <article class="gift-card">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500" alt="Dark Matter">
+                <h3>Dark Matter</h3>
+                <p>Investigating the invisible mass of the universe.</p>
+                <a href="#" style="background: #555; cursor: not-allowed; pointer-events: none;">Locked</a>
+            </article>
+        </div>
+    </section>
+
+    <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+
+    <script>
+        function setTheme(mode) {
+            if (mode === 'dark') document.body.classList.add('dark');
+            else document.body.classList.remove('dark');
+            localStorage.setItem('theme', mode);
+        }
+        setTheme(localStorage.getItem('theme') || 'dark');
+    </script>
+
+</body>
+</html>

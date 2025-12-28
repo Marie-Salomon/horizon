@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Enlistment - Event Horizon</title>
+</head>
+<body class="dark">
+    <div id="login-screen">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>🚀 MISSION ENLISTMENT</h1>
+                <p>Create your encrypted researcher profile</p>
+            </div>
+
+            <form action="/signup" method="POST" autocomplete="off">
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Username (e.g. Astro99)" required>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <div class="input-group">
+                        <input type="text" name="firstname" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="lastname" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="job" placeholder="Occupation (e.g. Astrophysicist)" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Secure Password" required>
+                </div>
+                <button type="submit" class="btn-login">CREATE ACCOUNT</button>
+            </form>
+            
+            <div class="login-footer">
+                <a href="/" style="color: var(--text); text-decoration: none; opacity: 0.8;">← Back to Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.body.className = localStorage.getItem('theme') || 'dark';
+    </script>
+</body>
+</html>

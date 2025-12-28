@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Journal - The Big Bang</title>
+</head>
+<body class="dark">
+    <nav class="main-nav">
+        <nav style="padding: 20px 0; margin-bottom: 2rem;">
+            <a href="/dashboard" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Dashboard
+            </a>
+        </nav>
+        <div style="font-weight: bold; color: var(--accent);">LOG_FILE: ORIGIN_OF_TIME</div>
+    </nav>
+
+    <main class="container" style="text-align: left; max-width: 800px; padding-bottom: 5rem;">
+    <h1>The Big Bang: The Origin of Space-Time</h1>
+    <hr>
+    
+    <img src="https://images.unsplash.com/photo-1462332420958-a05d1e002413?w=1000" 
+         alt="Cosmos" style="width:100%; border-radius:15px; margin: 2rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+
+    <section>
+        <h2>The Evidence of our Origins</h2>
+        <p>The Big Bang is not just a theory; it is supported by several pillars of observation.</p>
+        
+        
+
+        <div class="gift-list" style="grid-template-columns: 1fr; gap: 1rem;">
+            <div class="gift-card" style="text-align: left;">
+                <h3>🔴 Redshift (Hubble's Law)</h3>
+                <p>In 1929, Edwin Hubble discovered that galaxies are moving away from us. The further they are, the faster they go. This proved the universe is expanding.</p>
+            </div>
+            
+            <div class="gift-card" style="text-align: left;">
+                <h3>📺 Cosmic Microwave Background</h3>
+                <p>Discovered by accident in 1964, this faint "hiss" of radio waves is the afterglow of the Big Bang itself, cooled over billions of years.</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section style="margin-top: 3rem; background: var(--card-bg); padding: 2rem; border-radius: 20px;">
+        <h2>Why it matters</h2>
+        <p>Understanding the Big Bang allows us to calculate the age of the universe (13.8 billion years) and predict its ultimate fate. Most of our research today comes from telescopes like <strong>Planck</strong> and the <strong>James Webb Space Telescope</strong>.</p>
+        <a href="https://science.nasa.gov/astrophysics/focus-areas/what-is-the-big-bang" target="_blank" class="btn-read">View Official NASA Data</a>
+    </section>
+</main>
+</body>
+</html>

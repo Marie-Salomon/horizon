@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Login - Event Horizon</title>
+</head>
+<body class="dark">
+    <div id="login-screen">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>🌌 EVENT HORIZON</h1>
+                <p>Secure Research Portal Access</p>
+            </div>
+
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <div class="error-msg">{{ messages[0] }}</div>
+              {% endif %}
+            {% endwith %}
+
+            <form action="/login" method="POST" autocomplete="off">
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-login">AUTHENTICATE</button>
+            </form>
+            
+            <div class="login-footer">
+                <p>Unauthorized access is logged.</p>
+                <a href="/signup_page">Request New Access Token</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        if (!localStorage.getItem('theme')) {
+            localStorage.setItem('theme', 'dark');
+        }
+        document.body.className = localStorage.getItem('theme');
+    </script>
+</body>
+</html>
